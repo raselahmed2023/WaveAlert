@@ -1,21 +1,17 @@
 # WaveAlert
 
-A Bangla-first prototype for browsing district-level cold wave, flood and drought bulletins in Bangladesh. The three examples are fictional. Live feeds and notification delivery are outside this initial release.
+WaveAlert is a planned alert service for cold waves, floods and droughts in Bangladesh. This repository currently contains only the TypeScript project setup.
 
-## Run locally
+- `frontend/` — browser code
+- `backend/` — server code
 
-Open `index.html` in a browser. No package installation, credentials or build step is required. The demo works offline.
+## Type-check
 
-## Project files
+From the repository root, with Node.js and npm installed:
 
-- `index.html` defines the filters, status region and bulletin template.
-- `alerts.js` contains the sample bulletins and renders results when either filter changes.
-- `styles.css` handles mobile and desktop layouts.
+```sh
+npx --yes --package typescript@5.9.3 tsc --project frontend
+npx --yes --package typescript@5.9.3 tsc --project backend
+```
 
-## Add a sample
-
-Add an entry to `bulletins` in `alerts.js` with a hazard key (`cold`, `flood` or `drought`), district, title and summary. District options are derived from the data. Keep sample text clearly fictional.
-
-## Quick check
-
-Open the page and confirm three bulletins appear. Select বন্যা to see the কুড়িগ্রাম example. With that filter active, choose নওগাঁ to see the empty state. Select সব দেখুন to restore all three.
+Both commands check types without generating build files.
