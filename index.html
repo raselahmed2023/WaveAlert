@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#163f3b">
+  <title>WaveAlert · বাংলাদেশের সতর্কতা</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="alerts.js" defer></script>
+</head>
+<body>
+<header><div class="wrap mast"><strong lang="en">WaveAlert</strong><span>বাংলাদেশ</span></div></header>
+<main class="wrap">
+  <section class="intro" aria-labelledby="title">
+    <p class="demo">ডেমো সংস্করণ</p>
+    <h1 id="title">জেলাভিত্তিক সতর্কতা</h1>
+    <p>শৈত্যপ্রবাহ, বন্যা ও খরার নমুনা বুলেটিন দেখুন। এখানে প্রদর্শিত তথ্য কাল্পনিক।</p>
+  </section>
+  <section aria-label="বুলেটিন">
+    <div class="filters">
+      <label>দুর্যোগের ধরন<select id="hazard"><option value="">সব ধরন</option></select></label>
+      <label>জেলা<select id="district"><option value="">সব জেলা</option></select></label>
+      <button type="button" id="reset">সব দেখুন</button>
+    </div>
+    <p role="status" id="status"></p>
+    <div id="results"></div>
+    <noscript>নমুনা বুলেটিন দেখতে JavaScript চালু করুন।</noscript>
+  </section>
+</main>
+<template id="bulletin">
+  <article><span class="type"></span><h2></h2><p class="place"></p><p class="summary"></p></article>
+</template>
+</body>
+</html>
