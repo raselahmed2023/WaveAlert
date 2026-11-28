@@ -1,5 +1,5 @@
-const cacheName = "wavealert-drill-v1";
-const files = ["/", "/alerts/", "/map/", "/workspace/", "/emergency/", "/shelters/", "/disasters/", "/resources/", "/style.css", "/index.js", "/workflow.js", "/messages.js"];
+const cacheName = "wavealert-drill-v2";
+const files = ["/", "/alerts/", "/map/", "/workspace/", "/emergency/", "/shelters/", "/disasters/", "/resources/", "/style.css", "/index.js", "/workflow.js", "/weather.js", "/provider.js", "/messages.js"];
 self.addEventListener("install", event => event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(files))));
 self.addEventListener("activate", event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith("wavealert-drill-") && key !== cacheName).map(key => caches.delete(key))))));
 self.addEventListener("fetch", event => {
